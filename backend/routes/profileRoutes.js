@@ -1,14 +1,16 @@
 const express = require("express");
+
 const authenticateToken = require("../middleware/authMiddleware");
+
+const {
+  getProfile,
+  createOrUpdateProfile,
+} = require("../controllers/profileController");
 
 const router = express.Router();
 
-router.get("/", authenticateToken, (req, res) => {
-  res.json({
-    success: true,
-    message: "You accessed a protected route",
-    user: req.user,
-  });
-});
+router.get("/", authenticateToken, getProfile);
+
+router.put("/", authenticateToken, createOrUpdateProfile);
 
 module.exports = router;
