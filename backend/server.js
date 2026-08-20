@@ -6,6 +6,9 @@ const authRoutes = require("./routes/authRoutes");
 const profileRoutes = require("./routes/profileRoutes");
 const jobRoutes = require("./routes/jobRoutes");
 const applicationRoutes = require("./routes/applicationRoutes");
+const interviewRoutes = require("./routes/interviewRoutes");
+const resumeRoutes = require("./routes/resumeRoutes");
+const resumeAnalysisRoutes = require("./routes/resumeAnalysisRoutes");
 
 dotenv.config();
 
@@ -17,6 +20,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/jobs", jobRoutes);
 app.use("/api/applications", applicationRoutes);
+app.use("/api/interviews", interviewRoutes);
+app.use("/api/resumes", resumeRoutes);
+app.use("/api/resume-analysis", resumeAnalysisRoutes);
 
 app.get("/api/health", async (req, res) => {
   try {

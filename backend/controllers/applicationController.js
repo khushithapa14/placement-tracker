@@ -100,6 +100,7 @@ const getMyApplications = async (req, res) => {
     });
   }
 };
+
 const updateApplicationStatus = async (req, res) => {
   try {
     const userId = req.user.userId;
